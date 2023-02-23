@@ -6,7 +6,7 @@ const formidable=require("formidable")
 const cors=require("cors")
 
 let server= express();
-
+/*
 server.use((req,res,next)=>{
 res.header('Access-Control-Allow-Origin','*')
 
@@ -16,13 +16,13 @@ res.header('Access-Control-Allow-Headers','Content-Type')
 next();
 
 })
-
-server.use(cors())
+*/
+server.use(cors({origin:["https://localhost:3000/","https://backend-site.onrender.com/"]}))
 
 
 
 server.use(express.json())  //this is to accept data in json format 
-server.use(express.urlencoded())   //this is to decode the data send throught html form
+server.use(express.urlencoded({extended:false}))   //this is to decode the data send throught html form
 
 
 
