@@ -24,9 +24,6 @@ server.use(
   })
   )
 
-
-
-
 server.use(express.json())  //this is to accept data in json format 
 server.use(express.urlencoded({extended:false}))   //this is to decode the data send throught html form
 
@@ -104,7 +101,7 @@ res.send("file uploaded")
 server.get("/images",(request,response)=>{
   var createConnection=mysql.createConnection({host:"localhost",user:"root",password:"",database:"joboffers"})
 
-  createConnection.connect((erreur)=>{if(erreur)throw erreur})
+  createConnection.connect((erreur)=>{if(erreur)throw erreur ;console.log("connect success")})
   createConnection.query(
     "select identifiant,name,description,image from projectsimage p, images i where p.identifiant=i.id",(err,res)=>{
     if(err)throw err;
