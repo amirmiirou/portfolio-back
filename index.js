@@ -26,8 +26,16 @@ server.use(
 
 
 
+
 server.use(express.json())  //this is to accept data in json format 
 server.use(express.urlencoded({extended:false}))   //this is to decode the data send throught html form
+server.use(
+  cors({
+    origin:"https://frontend-api-b6ii.onrender.com"
+  }))
+
+
+
 
 
 
