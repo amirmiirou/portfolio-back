@@ -18,7 +18,11 @@ next();
 })
 */
 
-server.use(cors({origin:["https://localhost:3000/","https://frontend-api-b6ii.onrender.com"]}))
+server.use(
+  cors({
+    origin: ["https://localhost:3000/","https://frontend-api-b6ii.onrender.com"]
+  })
+  )
 
 
 
