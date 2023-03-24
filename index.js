@@ -11,7 +11,7 @@ const { ObjectId } = require("mongodb")
 
 let server= express();
 
-server.use(cors({origin: "http://localhost:3000"}))
+server.use(cors({origin: "https://userapi-xgov.onrender.com/"}))
 server.use(express.json())  //this is to accept data in json format 
 server.use(express.urlencoded({extended:false}))   //this is to decode the data send throught html form
 
@@ -42,7 +42,7 @@ const form=new formidable.IncomingForm()
 form.parse(req,(err,fields,files)=>{if(err) throw err ;
 fs.rename(files.upload.filepath,`C:/Users/leo/Desktop/site-web/portfolio/server/images/${fields.projectSelected}/${files.upload.originalFilename}`,()=>{})
 })
-res.redirect("http://localhost:3000")
+res.redirect("https://userapi-xgov.onrender.com/")
 })
 
 
